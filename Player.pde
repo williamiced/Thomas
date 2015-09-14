@@ -75,7 +75,7 @@ public class Player {
 	}
 
 	public void slowDown() {
-		cdMultiplier /= 2;
+		cdMultiplier = cdMultiplier/2 < 1 ? 1 : cdMultiplier/2;
 	}
 
 	public int getID() {
@@ -197,5 +197,7 @@ public class Player {
 		locX = startX;
 		locY = startY;
 		dir = DIR_NORTH;
+		slowDown();
+		slowDown();
 	}
 }

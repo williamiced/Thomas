@@ -179,7 +179,7 @@ public class Game {
   			if (playerList.get(i).isAlive())
   				aliveList.append(playerList.get(i).getID());
   		if (aliveList.size() == 0)
-  			return -1;
+  			return -2;
   		else if (aliveList.size() == 1)
   			return aliveList.get(0);
 
@@ -189,10 +189,10 @@ public class Game {
   			if (playerList.get(i).getScore() > SCORE_LIMIT)
   				aliveList.append(playerList.get(i).getID());
   		if (aliveList.size() == 0)
-  			return 0;
+  			return -1;
   		else if (aliveList.size() == 1)
   			return aliveList.get(0);
   		else
-  			return -1;
+  			return -2;
   	}
 }

@@ -3,7 +3,7 @@ import processing.serial.*;
 
 ArrayList<PImage> imageList;
 Game game;
-int gameState; // 0 for not end, negative for tie, else the gameState indicate the winner player ID
+int gameState = -1; // -1 for not end, -2 for tie, else the gameState indicate the winner player ID
 
 boolean isGaussMode = false;
 
@@ -28,7 +28,7 @@ void draw() {
 	game.drawPlayersCD();
 
 	gameState = game.checkGameState();
-	if (gameState == 0) { // Not ended
+	if (gameState == -1) { // Not ended
 		game.randomAddBomb();
 		game.decreasePlayersCD();
 	} else {
@@ -48,7 +48,7 @@ void draw() {
 
 */
 void keyPressed() {
-	if (gameState == 0) {
+	if (gameState == -1) {
 		if (key >= 'a' && key <= 'z')
 			key = Character.toUpperCase(key);
 		switch(key) {

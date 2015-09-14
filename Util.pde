@@ -20,7 +20,7 @@ void drawEndView() {
 	pushStyle();
     textSize(textwinsize);
     fill(256,256,256);
-    if (gameState < 0)
+    if (gameState == -2)
     	text("=== TIE ===", textwin_x, textwin_y);
     else
     	text("Player"+(gameState+1)+" Win~~!!", textwin_x, textwin_y);
@@ -28,7 +28,7 @@ void drawEndView() {
 }
 
 void resetGame() {
-	gameState = 0;
+	gameState = -1;
 	game = new Game();
 }
 

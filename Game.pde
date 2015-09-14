@@ -49,8 +49,8 @@ public class Game {
 	private void setupPlayers() {
 		playerCounter = 0;
 		playerList = new ArrayList<Player>();
-		playerList.add(new Player(new Location(0, size-1), size, IMAGE_THOMAS_BLUE, playerCounter++));
-		playerList.add(new Player(new Location(size-1, size-1), size, IMAGE_THOMAS_RED, playerCounter++));
+		playerList.add(new Player(new Location(0, size), size, IMAGE_THOMAS_BLUE, playerCounter++));
+		playerList.add(new Player(new Location(size-1, size), size, IMAGE_THOMAS_RED, playerCounter++));
 	}
 
 	private void drawBoard() {
@@ -165,10 +165,11 @@ public class Game {
   			player.eatBomb();
   			board[nextLoc.y][nextLoc.x] = 0;
   		}
-  		boolean isAlive = player.makeProgress();
+  		boolean isGoodMove = player.makeProgress();
   		player.fillCD();
-  		if (!isAlive) 
-  			player.killPlayer();
+  		if (!isGoodMove) 
+  			player.gotoStart();
+  			//player.killPlayer();
   	}
 
   	private int checkGameState() {

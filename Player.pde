@@ -15,10 +15,16 @@ public class Player {
 
 	private int score;
 
+	private int startX;
+	private int startY;
+
 	public Player(Location loc, int size, int imgIdx, int num) {
 		id = num;
 		isAlive = true;
 		score = 0;
+
+		startX = loc.x;
+		startY = loc.y;
 
 		locX = loc.x;
 		locY = loc.y;
@@ -185,5 +191,10 @@ public class Player {
 
 	private int getScore() {
 		return score;
+	}
+
+	private void gotoStart() {
+		locX = startX;
+		locY = startY;
 	}
 }

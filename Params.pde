@@ -40,8 +40,8 @@ final int RAIL_L2 = 10;
 final int RAIL_L3 = 11;
 final int RAIL_L4 = 12;
 
-final int BOMB_GENERATER_TIME 	= 100;
-final int SCORE_LIMIT 			= 10;
+final int BOMB_GENERATER_TIME 	= 200;
+final int SCORE_LIMIT 			= 5;
 
 final int[][][] TAG_GAUSS = {
 	{ // Player 1

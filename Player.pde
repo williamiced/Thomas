@@ -196,5 +196,6 @@ public class Player {
 	private void gotoStart() {
 		locX = startX;
 		locY = startY;
+		dir = DIR_NORTH;
 	}
 }
